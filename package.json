@@ -1,0 +1,19 @@
+{
+  "name": "ala-http-proxy",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ALA Node.js http proxy",
+  "author": "Andre Fernandes <andre@vertigo.com.br>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-watch": "nodemon index.js --inspect=0.0.0.0:9229",
+    "start-wait-debuger": "nodemon index.js --inspect-brk=0.0.0.0:9229"
+  },
+  "dependencies": {
+    "http-proxy": "v1.11.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  }
+}
