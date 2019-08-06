@@ -13,6 +13,8 @@ services:
       - "3000:3000"
       - "9229:9229"
       - "9230:9230"
+    environment:
+      - PROXY_URL=http://3.85.55.225/images
     volumes:
       - .:/opt/node_app
       # bind-mounting these two files in will let you add packages during development without rebuilding

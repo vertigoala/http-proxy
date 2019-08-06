@@ -16,6 +16,8 @@ proxy.on('error', function (err, req, res) {
     res.end('ALA-PROXY: Something went wrong. And we are reporting a custom error message.');
   });
 
+const PROXY_URL = process.env.PROXY_URL || 'http://image-sample:8080';
+
 //
 // Create your custom server and just call `proxy.web()` to proxy
 // a web request to the target passed in the options
@@ -25,8 +27,8 @@ var server = http.createServer(function(req, res) {
     // You can define here your custom logic to handle the request
     // and then proxy the request.
     console.log("ALA-PROXY: dumping request headers\n" + JSON.stringify(req.headers, true, 2))
-    proxy.web(req, res, { target: 'http://image-sample:8080' });
+    proxy.web(req, res, { target: `${PROXY_URL}` });
   });
   
-  console.log("ALA-PROXY: listening on port 3000")
+  console.log(`ALA-PROXY: listening on port 3000, PROXY_URL=${PROXY_URL}`)
   server.listen(3000);
