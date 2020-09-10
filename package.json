@@ -11,7 +11,7 @@
     "start-wait-debuger": "nodemon index.js --inspect-brk=0.0.0.0:9229"
   },
   "dependencies": {
-    "http-proxy": "v1.11.1"
+    "http-proxy": "v1.18.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.8"
